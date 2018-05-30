@@ -1,0 +1,35 @@
+<template>
+    <view class="box">
+        <view class="item" wx:for-items="{{ list }}" wx:key="index">
+            <view class="title">{{ item.title }}</view>
+            <view class="content">{{ item.text }}</view>
+            <button type="primary">删除</button>
+        </view>
+    </view>
+</template>
+
+<script>
+	import wepy from 'wepy'
+	import { connect } from 'wepy-redux'
+
+	export default class list extends wepy.component {
+
+		props = {
+			list : {
+				type : Array ,
+				default : []
+			}
+		}
+
+		onload(){
+
+		}
+	}
+</script>
+
+
+<style lang="less">
+    .box{
+        width: 100%;
+    }
+</style>
